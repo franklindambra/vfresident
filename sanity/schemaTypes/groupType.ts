@@ -27,5 +27,17 @@ export const groupType = defineType({
       type: "number",
       initialValue: 999,
     }),
+    defineField({
+      name: "gallery",
+      title: "Gallery",
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "galleryImage" }],
+        },
+      ],
+      description: "Select images for the unique gallery of this group.",
+    }),
   ],
 });

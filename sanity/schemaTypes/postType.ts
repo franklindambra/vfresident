@@ -63,6 +63,18 @@ export const postType = defineType({
       description:
         "The ideal length for a meta description is 150-160 characters to ensure it displays properly in search engine results without being truncated.",
     }),
+    defineField({
+      name: "gallery",
+      title: "Gallery",
+      type: "array",
+      of: [
+        defineArrayMember({
+          type: "reference",
+          to: [{ type: "galleryImage" }],
+        }),
+      ],
+      description: "Select images for the unique gallery of this article.",
+    }),
   ],
   preview: {
     select: {

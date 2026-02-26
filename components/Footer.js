@@ -4,9 +4,11 @@ import { Facebook, Instagram, Sprout } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="w-full">
-      <div className="bg-white/90 max-w-[1200px] mx-auto px-5 lg:px-7 py-10 rounded-b-lg flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+      <div className="bg-white/90 max-w-[1200px] mx-auto px-5 lg:px-7 py-10 rounded-b-lg flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-gray-300 border-t">
         <div className="flex flex-col gap-2">
-          <h3 className="font-bold text-vf-green">Village Farm Resident</h3>
+          <h3 className="font-bold text-vf-green">
+            Village Farm Residents Association
+          </h3>
           <div className="flex gap-4 text-gray-600">
             <a
               href="https://www.facebook.com/greengatefarms/"

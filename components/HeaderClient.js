@@ -34,7 +34,7 @@ export default function HeaderClient({ groups }) {
           }}
         >
           <h1 className="text-xl md:text-2xl font-bold tracking-tight text-neutral-900 text-vf-green">
-            Village Farm Resident
+            Village Farm Residents Association
           </h1>
         </Link>
 
@@ -91,15 +91,37 @@ export default function HeaderClient({ groups }) {
             Events
           </Link>
 
-          <Link
-            href="/resources"
-            className=" hover:text-vf-green transition-all duration-300 ease-in-out"
-            onClick={() => {
-              resetMenus();
-            }}
-          >
-            Resources
-          </Link>
+          <div className="relative group">
+            <Link
+              href="#"
+              className="hover:text-vf-green transition-all duration-300 ease-in-out"
+            >
+              Resources
+            </Link>
+            <div className="absolute top-4 bg-white shadow-lg w-55 rounded-md mt-2 p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 translate-y-2 transition-all duration-300 ease-in-out">
+              <Link
+                href="/resources/home-care"
+                className="block px-4 py-2 hover:text-vf-green transition-all duration-300 ease-in-out"
+                onClick={resetMenus}
+              >
+                Home Care
+              </Link>
+              <Link
+                href="/resources/property-info"
+                className="block px-4 py-2 hover:text-vf-green transition-all duration-300 ease-in-out"
+                onClick={resetMenus}
+              >
+                Property Info
+              </Link>
+              <Link
+                href="/resources/trades-people"
+                className="block px-4 py-2 hover:text-vf-green transition-all duration-300 ease-in-out"
+                onClick={resetMenus}
+              >
+                Tradespeople
+              </Link>
+            </div>
+          </div>
 
           <Link
             href="/contact"
@@ -171,18 +193,27 @@ export default function HeaderClient({ groups }) {
                 isResourcesDropdownOpen ? "max-h-[200px]" : "max-h-0"
               } overflow-hidden transition-all duration-300 ease-in-out text-center`}
             >
-              {/* {services.map((service) => (
-                <Link
-                  key={service._id}
-                  href={`/services/${service.slug.current}`}
-                  className="block px-4 my-2 hover:text-vf-green transition-all duration-300 ease-in-out"
-                  onClick={() => {
-                    resetMenus();
-                  }}
-                >
-                  - {service.title}
-                </Link>
-              ))} */}
+              <Link
+                href="/resources/home-care"
+                className="block px-4 my-2 hover:text-vf-green transition-all duration-300 ease-in-out"
+                onClick={resetMenus}
+              >
+                - Home Care
+              </Link>
+              <Link
+                href="/resources/property-info"
+                className="block px-4 my-2 hover:text-vf-green transition-all duration-300 ease-in-out"
+                onClick={resetMenus}
+              >
+                - Property Info
+              </Link>
+              <Link
+                href="/resources/trades-people"
+                className="block px-4 my-2 hover:text-vf-green transition-all duration-300 ease-in-out"
+                onClick={resetMenus}
+              >
+                - Tradespeople
+              </Link>
             </div>
           </div>
 
