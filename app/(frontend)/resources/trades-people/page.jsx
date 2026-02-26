@@ -7,16 +7,14 @@ export default async function Tradespeople() {
   return (
     <div className="flex flex-col">
       <Title text="Tradespeople" />
-      <div className="grid gap-6">
+      <div className="">
         {data.map((item) => (
           <div
             key={item._id}
             className="bg-white rounded-lg border border-gray-100 shadow-sm"
           >
-            <h3 className="text-xl font-bold">{item.name}</h3>
-            {item.title && (
-              <p className="text-vf-green font-medium mb-2">{item.title}</p>
-            )}
+            <h3 className="">{item.name}</h3>
+            {item.title && <p className="font-bold mb-2">{item.title}</p>}
             <p className="text-gray-600 mb-3">{item.description}</p>
             <div className="text-sm space-y-1">
               {item.phone && (

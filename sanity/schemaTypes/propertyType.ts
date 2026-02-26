@@ -8,15 +8,18 @@ export const propertyType = defineType({
   icon: HomeIcon,
   fields: [
     defineField({
-      name: "name",
+      name: "title",
       type: "string",
-      title: "Name",
+      title: "Contact Point",
+      description: "e.g 'General manager, Report Issues'",
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: "title",
+      name: "person",
       type: "string",
       title: "Title / Identifying Status",
+      description:
+        "If there is a person associated with this contact enter it here.",
     }),
     defineField({
       name: "phone",

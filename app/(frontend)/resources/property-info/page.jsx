@@ -5,7 +5,7 @@ export default async function PropertyInfo() {
   const data = await getProperties();
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col">
       <Title text="Property Info" />
       <div className="grid gap-6">
         {data.map((item) => (

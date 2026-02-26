@@ -6,7 +6,7 @@ export default async function HomeCare() {
   const data = await getHomeCare();
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="">
       <Title text="Home Care" />
       <div className="grid gap-8">
         {data.map((item) => (
