@@ -25,7 +25,7 @@ export default function HeaderClient({ groups }) {
 
   return (
     <header className="top-2 w-full z-50 fixed px-4">
-      <nav className="bg-white/80 backdrop-blur-md max-w-[1200px] rounded-lg py-5 mx-auto flex justify-between items-center px-5 lg:px-7 shadow-sm border border-gray-100">
+      <nav className="bg-white/80 backdrop-blur-md max-w-[1400px] rounded-lg py-5 mx-auto flex justify-between items-center px-5 lg:px-7 shadow-sm border border-gray-100">
         <Link
           href="/"
           className="hover:opacity-80 transition-opacity"
