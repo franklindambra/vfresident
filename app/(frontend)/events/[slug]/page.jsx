@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 export default async function Event({ params }) {
   const slug = (await params).slug;
 

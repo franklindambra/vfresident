@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { getGroup } from "@/app/data-access/actions";
 import Title from "@/components/Title";
 import { PortableText } from "@portabletext/react";

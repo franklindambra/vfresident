@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { getEvents } from "@/app/data-access/actions";
 import Title from "@/components/Title";
 

@@ -1,17 +1,23 @@
 "use client";
 import React, { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, X } from "lucide-react";
 import Link from "next/link";
-import { X } from "lucide-react";
+import { usePathname } from "next/navigation";
 import CTA from "./CTA";
 
 export default function HeaderClient({ groups }) {
+  const pathname = usePathname();
   // State for mobile menu open or closed
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // State for individual nav dropdowns (for mobile)
   const [isGroupsDropdownOpen, setGroupsDropdownOpen] = useState(false);
   const [isResourcesDropdownOpen, setResourcesDropdownOpen] = useState(false);
+
+  const isActive = (path) => {
+    if (path === "/") return pathname === "/";
+    return pathname.startsWith(path);
+  };
 
   const resetMenus = () => {
     setGroupsDropdownOpen(false);
@@ -54,7 +60,9 @@ export default function HeaderClient({ groups }) {
         <div className="hidden min-[1165px]:flex items-center gap-4 ">
           <Link
             href="/about"
-            className=" hover:text-vf-green transition-all duration-300 ease-in-out"
+            className={`hover:text-vf-green transition-all duration-300 ease-in-out ${
+              isActive("/about") ? "text-vf-green" : ""
+            }`}
             onClick={() => {
               resetMenus();
             }}
@@ -62,7 +70,14 @@ export default function HeaderClient({ groups }) {
             About Us
           </Link>
           <div className="relative group">
-            <Link href="/groups">Clubs & Groups</Link>
+            <Link
+              href="/groups"
+              className={`hover:text-vf-green transition-all duration-300 ease-in-out ${
+                isActive("/groups") ? "text-vf-green" : ""
+              }`}
+            >
+              Clubs & Groups
+            </Link>
             <div
               className={`absolute top-4 bg-white shadow-lg w-55 rounded-md mt-2 p-2  opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 translate-y-2 transition-all duration-300 ease-in-out`}
             >
@@ -83,7 +98,9 @@ export default function HeaderClient({ groups }) {
 
           <Link
             href="/events"
-            className=" hover:text-vf-green transition-all duration-300 ease-in-out"
+            className={`hover:text-vf-green transition-all duration-300 ease-in-out ${
+              isActive("/events") ? "text-vf-green" : ""
+            }`}
             onClick={() => {
               resetMenus();
             }}
@@ -92,7 +109,9 @@ export default function HeaderClient({ groups }) {
           </Link>
           <Link
             href="/bergstrom-community-gardens"
-            className=" hover:text-vf-green transition-all duration-300 ease-in-out"
+            className={`hover:text-vf-green transition-all duration-300 ease-in-out ${
+              isActive("/bergstrom-community-gardens") ? "text-vf-green" : ""
+            }`}
             onClick={() => {
               resetMenus();
             }}
@@ -103,7 +122,9 @@ export default function HeaderClient({ groups }) {
           <div className="relative group">
             <Link
               href="#"
-              className="hover:text-vf-green transition-all duration-300 ease-in-out"
+              className={`hover:text-vf-green transition-all duration-300 ease-in-out ${
+                isActive("/resources") ? "text-vf-green" : ""
+              }`}
             >
               Resources
             </Link>
@@ -134,7 +155,9 @@ export default function HeaderClient({ groups }) {
 
           <Link
             href="/contact"
-            className="hover:text-vf-green transition-all duration-300 ease-in-out"
+            className={`hover:text-vf-green transition-all duration-300 ease-in-out ${
+              isActive("/contact") ? "text-vf-green" : ""
+            }`}
             onClick={() => {
               resetMenus();
             }}
@@ -154,7 +177,9 @@ export default function HeaderClient({ groups }) {
         <nav className="flex flex-col items-center py-5">
           <Link
             href="/about"
-            className="mb-5 hover:text-vf-green transition-all duration-300 ease-in-out"
+            className={`mb-5 hover:text-vf-green transition-all duration-300 ease-in-out ${
+              isActive("/about") ? "text-vf-green" : ""
+            }`}
             onClick={() => {
               resetMenus();
             }}
@@ -164,7 +189,9 @@ export default function HeaderClient({ groups }) {
           <div className="w-full mb-5">
             <Link
               href="#"
-              className="block px-5 text-center mb-2"
+              className={`block px-5 text-center mb-2 hover:text-vf-green transition-all duration-300 ease-in-out ${
+                isActive("/groups") ? "text-vf-green" : ""
+              }`}
               onClick={() => setGroupsDropdownOpen(!isGroupsDropdownOpen)}
             >
               Groups & Clubs <ChevronDown className="inline w-4 h-4" />
@@ -192,7 +219,9 @@ export default function HeaderClient({ groups }) {
           <div className="w-full mb-5">
             <Link
               href="#"
-              className="block px-5 text-center mb-2"
+              className={`block px-5 text-center mb-2 hover:text-vf-green transition-all duration-300 ease-in-out ${
+                isActive("/resources") ? "text-vf-green" : ""
+              }`}
               onClick={() => setResourcesDropdownOpen(!isResourcesDropdownOpen)}
             >
               Resources <ChevronDown className="inline w-4 h-4" />
@@ -228,7 +257,9 @@ export default function HeaderClient({ groups }) {
 
           <Link
             href="/events"
-            className="mb-5 hover:text-vf-green transition-all duration-300 ease-in-out"
+            className={`mb-5 hover:text-vf-green transition-all duration-300 ease-in-out ${
+              isActive("/events") ? "text-vf-green" : ""
+            }`}
             onClick={() => {
               resetMenus();
             }}
@@ -237,7 +268,9 @@ export default function HeaderClient({ groups }) {
           </Link>
           <Link
             href="/bergstrom-community-gardens"
-            className="mb-5 hover:text-vf-green transition-all duration-300 ease-in-out"
+            className={`mb-5 hover:text-vf-green transition-all duration-300 ease-in-out ${
+              isActive("/bergstrom-community-gardens") ? "text-vf-green" : ""
+            }`}
             onClick={() => {
               resetMenus();
             }}
@@ -247,7 +280,9 @@ export default function HeaderClient({ groups }) {
 
           <Link
             href="/contact"
-            className="mb-5 hover:text-vf-green transition-all duration-300 ease-in-out"
+            className={`mb-5 hover:text-vf-green transition-all duration-300 ease-in-out ${
+              isActive("/contact") ? "text-vf-green" : ""
+            }`}
             onClick={() => {
               resetMenus();
             }}

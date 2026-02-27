@@ -2,6 +2,7 @@ import "@/app/globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { DM_Serif_Display } from "next/font/google";
+import { FathomAnalytics } from "@/components/Fathom";
 
 const dmSerif = DM_Serif_Display({
   variable: "--font-header",
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${dmSerif.variable} antialiased`}>
+        <FathomAnalytics />
         <Header />
         <div className="fixed inset-0 -z-10 h-full w-full bg-[url(/placeholder.jpg)] bg-cover bg-center bg-no-repeat"></div>
         <div className="w-full px-4 py-5">

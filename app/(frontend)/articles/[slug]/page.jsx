@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { getPost } from "@/app/data-access/actions";
 import { PortableText } from "@portabletext/react";
 import Title from "@/components/Title";

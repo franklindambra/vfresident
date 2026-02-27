@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { getTradespeople } from "@/app/data-access/actions";
 import Title from "@/components/Title";
 
