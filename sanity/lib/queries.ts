@@ -54,6 +54,20 @@ export const GROUPS_QUERY = `*[_type == "groups" && defined(slug.current)]{
   }
 }`;
 
+export const GROUP_QUERY = `*[_type == "groups" && slug.current == $slug][0]{
+  _id,
+  name,
+  "slug": slug.current,
+  description,
+  "gallery": gallery[]->{
+    _id,
+    title,
+    "url": image.asset->url,
+    altText,
+    caption
+  }
+}`;
+
 export const EVENTS_QUERY = `*[_type == "event" && defined(slug.current)] | order(date asc) [0...10]{
   _id,
   title,

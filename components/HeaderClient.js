@@ -25,7 +25,7 @@ export default function HeaderClient({ groups }) {
 
   return (
     <header className="top-2 w-full z-50 fixed px-4">
-      <nav className="bg-white/80 backdrop-blur-md max-w-[1400px] rounded-lg py-5 mx-auto flex justify-between items-center px-5 lg:px-7 shadow-sm border border-gray-100">
+      <nav className="bg-gray-100/80 backdrop-blur-md max-w-[1400px] rounded-lg py-5 mx-auto flex justify-between items-center px-5 lg:px-7 shadow-sm">
         <Link
           href="/"
           className="hover:opacity-80 transition-opacity"
@@ -69,7 +69,7 @@ export default function HeaderClient({ groups }) {
               {groups.map((group) => (
                 <Link
                   key={group._id}
-                  href={`/groups/${group.slug.current}`}
+                  href={`/groups/${group.slug}`}
                   className="block px-4 py-2 roboto-mono hover:text-vf-green transition-all duration-300 ease-in-out"
                   onClick={() => {
                     resetMenus();
@@ -168,7 +168,7 @@ export default function HeaderClient({ groups }) {
               {groups.map((group) => (
                 <Link
                   key={group._id}
-                  href={`/groups/${group.slug.current}`}
+                  href={`/groups/${group.slug}`}
                   className="block px-4 my-2 hover:text-vf-green transition-all duration-300 ease-in-out"
                   onClick={() => {
                     resetMenus();

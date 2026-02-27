@@ -12,7 +12,7 @@ export default async function Groups() {
         {groups.map((group) => (
           <Link
             key={group._id}
-            href={`/groups/${group.slug.current}`}
+            href={`/groups/${group.slug}`}
             className="p-4 bg-white border border-gray-100 rounded-lg hover:shadow-sm transition-shadow"
           >
             <h3 className="font-bold text-lg">{group.name}</h3>

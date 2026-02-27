@@ -3,8 +3,8 @@ import { Facebook, Instagram, Sprout } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="w-full">
-      <div className="bg-white/90 max-w-[1400px] mx-auto px-5 lg:px-7 py-5 rounded-b-lg flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-gray-300 border-t">
+    <footer className="w-full ">
+      <div className="bg-gray-100/90 max-w-[1400px] mx-auto px-5 lg:px-7 py-5 rounded-b-lg flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-gray-300 border-t">
         <div className="flex flex-col gap-2">
           <h3 className="font-bold text-vf-green">
             Village Farm Residents Association

@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
         <Header />
         <div className="fixed inset-0 -z-10 h-full w-full bg-[url(/placeholder.jpg)] bg-cover bg-center bg-no-repeat"></div>
         <div className="w-full px-4 py-5">
-          <main className="mt-20 bg-white min-h-screen shadow-xl rounded-t-lg max-w-[1400px] mx-auto px-5 lg:px-7 py-10">
+          <main className="mt-20 bg-gray-100 min-h-screen shadow-xl rounded-t-lg max-w-[1400px] mx-auto px-5 lg:px-7 py-10">
             {children}
           </main>
           <Footer />

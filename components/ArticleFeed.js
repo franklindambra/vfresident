@@ -32,7 +32,7 @@ export default async function ArticleFeed() {
         <Link
           key={post._id}
           href={`/articles/${post.slug}`}
-          className="group flex flex-col lg:flex-row gap-6 items-start lg:items-center bg-white rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 border border-gray-100"
+          className="group flex flex-col lg:flex-row gap-6 items-start lg:items-center bg-white rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 border border-gray-300"
         >
           {post.image ? (
             <div className="relative w-full lg:w-48 h-48 lg:h-32 flex-shrink-0">
@@ -51,10 +51,10 @@ export default async function ArticleFeed() {
             <h3 className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-vf-green transition-colors leading-tight">
               {post.title}
             </h3>
-            <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+            <p className="text-gray-600 text-sm md:text-base">
               {getExcerpt(post.body)}
             </p>
-            <div className="text-xs text-gray-400 font-medium uppercase tracking-wider">
+            <div className="text-xs text-gray-500 font-mediumr">
               {post.publishedAt &&
                 new Date(post.publishedAt).toLocaleDateString("en-US", {
                   month: "long",

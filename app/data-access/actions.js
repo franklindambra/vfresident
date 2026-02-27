@@ -9,6 +9,7 @@ import {
   PROPERTIES_QUERY,
   HOME_CARE_QUERY,
   TRADESPEOPLE_QUERY,
+  GROUP_QUERY,
 } from "@/sanity/lib/queries"; // Import both the queries
 
 export const getProperties = async () => {
@@ -89,5 +90,15 @@ export const getgroups = async () => {
   } catch (error) {
     console.error("Error fetching groups:", error);
     return [];
+  }
+};
+
+export const getGroup = async (slug) => {
+  try {
+    const group = await client.fetch(GROUP_QUERY, { slug });
+    return group;
+  } catch (error) {
+    console.error("Error fetching group:", error);
+    return null;
   }
 };
