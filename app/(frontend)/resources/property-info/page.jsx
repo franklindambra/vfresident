@@ -11,7 +11,7 @@ export default async function PropertyInfo() {
         {data.map((item) => (
           <div
             key={item._id}
-            className="bg-white p-4 rounded-lg border border-gray-100 shadow-sm"
+            className="bg-white p-4 rounded-lg border border-gray-100 shadow-lg"
           >
             <h3 className="text-xl font-bold">{item.name}</h3>
             {item.title && (

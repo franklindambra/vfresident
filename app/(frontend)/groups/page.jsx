@@ -13,7 +13,7 @@ export default async function Groups() {
           <Link
             key={group._id}
             href={`/groups/${group.slug}`}
-            className="p-4 bg-white border border-gray-100 rounded-lg hover:shadow-sm transition-shadow"
+            className="p-4 bg-white border border-gray-100 rounded-lg hover:shadow-lg transition-shadow"
           >
             <h3 className="font-bold text-lg">{group.name}</h3>
             <p className="text-gray-600 text-sm line-clamp-2">

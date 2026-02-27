@@ -32,15 +32,15 @@ export default function BergstromCommunityGardens() {
     <div>
       <Title text="Bergstrom Community Gardens" />
 
-      <div className="mt-8 mb-12">
-        <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100">
+      <div className="mt-10 mb-2">
+        <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-100">
           <img
             src="/bergstrom-hero.jpg"
             alt="Bergstrom Community Gardens Hero"
             className="w-full h-auto object-cover max-h-[600px]"
           />
         </div>
-        <p className="text-2xl font-bold mt-6 text-vf-green">
+        <p className="text-2xl font-bold mt-10 text-vf-green">
           Open for Business!
         </p>
       </div>
@@ -88,24 +88,24 @@ export default function BergstromCommunityGardens() {
             </ul>
           </div>
 
-          <div className="flex flex-wrap gap-4 pt-4">
+          <div className="flex flex-wrap gap-4 ">
             <Link
               href="https://docs.google.com/forms/d/e/1FAIpQLSd8LYCdkpRHnYk_xtAaTnIjaPqaVgPzU3q2hllisw2fw9Ni-A/viewform?usp=dialog"
               target="_blank"
-              className="bg-vf-green text-white px-8 py-3 rounded-full font-bold hover:bg-opacity-90 transition-all shadow-md active:scale-95"
+              className="cta inline-block px-4 py-2 text-white text-center rounded-sm focus:outline-none bg-vf-green font-bold ease-in-out duration-200 hover:scale-[104%] shadow-lg active:scale-95"
             >
               Apply Now
             </Link>
             <Link
               href="https://docs.google.com/document/d/1WVY-JukqHPO_yq9nAxPlb9qPicuDGvnPDUygBPEPujQ/edit?tab=t.0#heading=h.woxhtcc0bahg"
               target="_blank"
-              className="border-2 border-vf-green text-vf-green px-8 py-3 rounded-full font-bold hover:bg-vf-green hover:text-white transition-all active:scale-95"
+              className="cta inline-block px-4 py-2 text-vf-green border-2 border-vf-green text-center rounded-sm focus:outline-none font-bold ease-in-out duration-200 hover:scale-[104%] shadow-lg active:scale-95"
             >
               Read the Handbook
             </Link>
           </div>
 
-          <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 shadow-sm">
+          <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 shadow-lg">
             <h3 className="text-xl font-bold mb-4 text-gray-900">
               Participating Communities
             </h3>
@@ -140,7 +140,7 @@ export default function BergstromCommunityGardens() {
           <h2 className="text-3xl font-bold mb-6 text-gray-900">
             Allotment Pricing & Fees
           </h2>
-          <div className="overflow-hidden rounded-xl border border-gray-200 shadow-sm">
+          <div className="overflow-hidden rounded-xl border border-gray-200 shadow-lg">
             <table className="w-full text-left">
               <thead className="bg-gray-50 border-b border-gray-200">
                 <tr>

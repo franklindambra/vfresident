@@ -11,7 +11,7 @@ export default async function Tradespeople() {
         {data.map((item) => (
           <div
             key={item._id}
-            className="bg-white rounded-lg border border-gray-100 shadow-sm"
+            className="bg-white rounded-lg border border-gray-100 shadow-lg p-5"
           >
             <h3 className="">{item.name}</h3>
             {item.title && <p className="font-bold mb-2">{item.title}</p>}

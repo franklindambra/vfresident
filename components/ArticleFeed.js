@@ -32,7 +32,7 @@ export default async function ArticleFeed() {
         <Link
           key={post._id}
           href={`/articles/${post.slug}`}
-          className="group flex flex-col lg:flex-row gap-6 items-start lg:items-center bg-white rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300 border border-gray-300"
+          className="group flex flex-col lg:flex-row gap-6 items-start lg:items-center bg-white rounded-lg overflow-hidden hover:shadow-lg transition-shadow duration-300 border border-gray-300"
         >
           {post.image ? (
             <div className="relative w-full lg:w-48 h-48 lg:h-32 flex-shrink-0">

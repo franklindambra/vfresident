@@ -17,13 +17,22 @@ export default async function ArticlePage({ params }) {
   const components = {
     block: {
       h1: ({ children }) => (
-        <h1 className="text-3xl font-bold my-6">{children}</h1>
+        <h1 className="text-3xl font-normal my-6">{children}</h1>
       ),
       h2: ({ children }) => (
-        <h2 className="text-2xl font-bold my-5">{children}</h2>
+        <h2 className="text-2xl font-normal my-5">{children}</h2>
       ),
       h3: ({ children }) => (
-        <h3 className="text-xl font-bold my-4">{children}</h3>
+        <h3 className="text-xl font-normal my-4">{children}</h3>
+      ),
+      h4: ({ children }) => (
+        <h4 className="text-lg font-normal my-3">{children}</h4>
+      ),
+      h5: ({ children }) => (
+        <h5 className="text-base font-normal my-2">{children}</h5>
+      ),
+      h6: ({ children }) => (
+        <h6 className="text-sm font-normal my-2">{children}</h6>
       ),
       normal: ({ children }) => (
         <p className="text-gray-700 leading-relaxed mb-4">{children}</p>
@@ -51,57 +60,73 @@ export default async function ArticlePage({ params }) {
         ← Back to home
       </Link>
 
-      <p className="font-bold text-2xl mb-2">{post.title}</p>
-
-      <div className="flex flex-wrap gap-2 items-center text-sm text-gray-500 border-b border-gray-100 mb-5">
-        <div className="flex items-center gap-2">
-          {post.authors?.map((author) => (
-            <div key={author.name} className="flex items-center gap-2">
-              {author.image && (
-                <img
-                  src={author.image}
-                  alt={author.name}
-                  className="w-8 h-8 rounded-full object-cover"
-                />
-              )}
-              <span className="font-medium text-gray-900">{author.name}</span>
-            </div>
-          ))}
-        </div>
-
-        <time dateTime={post.publishedAt}>
-          {new Date(post.publishedAt).toLocaleDateString("en-US", {
-            month: "long",
-            day: "numeric",
-            year: "numeric",
-          })}
-        </time>
-        {post.categories?.length > 0 && (
+      <div className="relative mb-10 rounded-xl overflow-hidden shadow-lg border border-gray-100 bg-gray-900 group">
+        {post.mainImage ? (
           <>
-            <span className="text-gray-300">|</span>
-            <div className="flex gap-2">
-              {post.categories.map((cat) => (
-                <span
-                  key={cat.slug}
-                  className="bg-gray-100 text-gray-600 px-2 py-0.5 rounded text-xs"
-                >
-                  {cat.title}
-                </span>
-              ))}
+            <img
+              src={post.mainImage}
+              alt={post.title}
+              className="w-full h-auto object-cover min-h-[400px] max-h-[600px] opacity-80"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-6 md:p-10">
+              <h1 className="font-bold text-3xl md:text-5xl text-white mb-4 leading-tight max-w-4xl tracking-tight">
+                {post.title}
+              </h1>
+
+              <div className="flex flex-wrap gap-4 items-center text-sm text-gray-200">
+                <div className="flex items-center gap-3">
+                  {post.authors?.map((author) => (
+                    <div key={author.name} className="flex items-center gap-2">
+                      {author.image && (
+                        <img
+                          src={author.image}
+                          alt={author.name}
+                          className="w-10 h-10 rounded-full object-cover border-2 border-white/20"
+                        />
+                      )}
+                      <span className="font-medium text-white">
+                        {author.name}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                <time dateTime={post.publishedAt} className="opacity-90">
+                  {new Date(post.publishedAt).toLocaleDateString("en-US", {
+                    month: "long",
+                    day: "numeric",
+                    year: "numeric",
+                  })}
+                </time>
+
+                {post.categories?.length > 0 && (
+                  <div className="flex gap-2">
+                    {post.categories.map((cat) => (
+                      <span
+                        key={cat.slug}
+                        className="bg-white/10 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium border border-white/10"
+                      >
+                        {cat.title}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
           </>
+        ) : (
+          <div className="p-10 bg-vf-green text-white">
+            <h1 className="font-bold text-3xl md:text-5xl mb-4 leading-tight">
+              {post.title}
+            </h1>
+            <div className="flex gap-4 items-center opacity-90 text-sm">
+              <span>By {post.authors?.map((a) => a.name).join(", ")}</span>
+              <span>•</span>
+              <time>{new Date(post.publishedAt).toLocaleDateString()}</time>
+            </div>
+          </div>
         )}
       </div>
-
-      {post.mainImage && (
-        <div className="mb-10 rounded-xl overflow-hidden shadow-lg border border-gray-100">
-          <img
-            src={post.mainImage}
-            alt={post.title}
-            className="w-full h-auto object-cover max-h-[500px]"
-          />
-        </div>
-      )}
 
       <div className="prose prose-lg max-w-none">
         <PortableText value={post.body} components={components} />

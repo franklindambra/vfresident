@@ -46,7 +46,7 @@ export default function ImageModal({
         <img
           src={imageUrl}
           alt={alt || "Full screen image"}
-          className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl"
+          className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-lg"
         />
         {caption && (
           <p className="text-white text-center text-sm md:text-base italic max-w-2xl px-4">

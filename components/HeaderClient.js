@@ -25,7 +25,7 @@ export default function HeaderClient({ groups }) {
 
   return (
     <header className="top-2 w-full z-50 fixed px-4">
-      <nav className="bg-gray-100/80 backdrop-blur-md max-w-[1400px] rounded-lg py-5 mx-auto flex justify-between items-center px-5 lg:px-7 shadow-sm">
+      <nav className="bg-gray-100/80 backdrop-blur-md max-w-[1400px] rounded-lg py-5 mx-auto flex justify-between items-center px-5 min-[1165px]:px-7 shadow-lg">
         <Link
           href="/"
           className="hover:opacity-80 transition-opacity"
@@ -38,7 +38,7 @@ export default function HeaderClient({ groups }) {
           </h1>
         </Link>
 
-        <div className="lg:hidden" onClick={toggleMenu}>
+        <div className="min-[1165px]:hidden" onClick={toggleMenu}>
           {isMenuOpen ? (
             <X className="w-6 h-6 text-neutral-900 cursor-pointer" />
           ) : (
@@ -51,7 +51,7 @@ export default function HeaderClient({ groups }) {
         </div>
 
         {/* DESKTOP MENU */}
-        <div className="hidden lg:flex items-center gap-4 xl:gap-5 ">
+        <div className="hidden min-[1165px]:flex items-center gap-4 ">
           <Link
             href="/about"
             className=" hover:text-vf-green transition-all duration-300 ease-in-out"
@@ -147,7 +147,7 @@ export default function HeaderClient({ groups }) {
 
       {/* MOBILE MENU */}
       <div
-        className={`lg:hidden overflow-hidden transition-all duration-300 ease-in-out bg-white rounded-lg mt-2 ${
+        className={`min-[1165px]:hidden overflow-hidden transition-all duration-300 ease-in-out bg-white rounded-lg mt-2 ${
           isMenuOpen ? "max-h-[500px]" : "max-h-0"
         }`}
       >

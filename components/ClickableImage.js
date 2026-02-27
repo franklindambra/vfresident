@@ -17,7 +17,7 @@ export default function ClickableImage({
     <>
       <div className={`group relative cursor-zoom-in ${className}`}>
         <div
-          className={`${aspectRatio} overflow-hidden rounded-xl border border-gray-100 shadow-sm transition-all duration-300 group-hover:shadow-md`}
+          className={`${aspectRatio} overflow-hidden rounded-xl border border-gray-100 shadow-lg transition-all duration-300 group-hover:shadow-lg`}
           onClick={() => setIsModalOpen(true)}
         >
           <img
@@ -26,7 +26,7 @@ export default function ClickableImage({
             className={`${imgClassName} transition-transform duration-500 group-hover:scale-[1.03]`}
           />
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300 flex items-center justify-center">
-            <span className="bg-white/90 text-gray-900 px-3 py-1.5 rounded-full text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0 duration-300 shadow-sm border border-gray-100">
+            <span className="bg-white/90 text-gray-900 px-3 py-1.5 rounded-full text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0 duration-300 shadow-lg border border-gray-100">
               Click to enlarge
             </span>
           </div>
