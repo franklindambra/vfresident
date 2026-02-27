@@ -90,6 +90,15 @@ export default function HeaderClient({ groups }) {
           >
             Events
           </Link>
+          <Link
+            href="/bergstrom-community-gardens"
+            className=" hover:text-vf-green transition-all duration-300 ease-in-out"
+            onClick={() => {
+              resetMenus();
+            }}
+          >
+            Community Garden
+          </Link>
 
           <div className="relative group">
             <Link
@@ -225,6 +234,15 @@ export default function HeaderClient({ groups }) {
             }}
           >
             Events
+          </Link>
+          <Link
+            href="/bergstrom-community-gardens"
+            className="mb-5 hover:text-vf-green transition-all duration-300 ease-in-out"
+            onClick={() => {
+              resetMenus();
+            }}
+          >
+            Community Garden
           </Link>
 
           <Link

@@ -33,6 +33,8 @@ export const postType = defineType({
     defineField({
       name: "mainImage",
       type: "image",
+      description:
+        "This image is used for the 'Above-The-Fold' (ATF) section of the article.",
       options: {
         hotspot: false,
       },

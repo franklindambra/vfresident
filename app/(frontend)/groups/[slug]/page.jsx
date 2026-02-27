@@ -1,6 +1,7 @@
 import { getGroup } from "@/app/data-access/actions";
 import Title from "@/components/Title";
 import { PortableText } from "@portabletext/react";
+import ClickableImage from "@/components/ClickableImage";
 
 export default async function Group({ params }) {
   const { slug } = await params;
@@ -26,20 +27,13 @@ export default async function Group({ params }) {
         {group.gallery && group.gallery.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
             {group.gallery.map((image) => (
-              <div key={image._id} className="space-y-2">
-                <div className="aspect-video relative overflow-hidden rounded-xl border border-gray-100 shadow-sm">
-                  <img
-                    src={image.url}
-                    alt={image.altText || image.title}
-                    className="object-cover w-full h-full transition-transform duration-500 hover:scale-105"
-                  />
-                </div>
-                {image.caption && (
-                  <p className="text-sm text-gray-500 italic px-1">
-                    {image.caption}
-                  </p>
-                )}
-              </div>
+              <ClickableImage
+                key={image._id}
+                src={image.url}
+                alt={image.altText || image.title}
+                caption={image.caption}
+                aspectRatio="aspect-video"
+              />
             ))}
           </div>
         )}

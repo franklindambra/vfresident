@@ -3,6 +3,8 @@ import { PortableText } from "@portabletext/react";
 import Title from "@/components/Title";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import InteractiveImage from "@/components/InteractiveImage";
+import ClickableImage from "@/components/ClickableImage";
 
 export default async function ArticlePage({ params }) {
   const { slug } = await params;
@@ -34,6 +36,9 @@ export default async function ArticlePage({ params }) {
       number: ({ children }) => (
         <ol className="list-decimal ml-6 mb-4 space-y-2">{children}</ol>
       ),
+    },
+    types: {
+      image: ({ value }) => <InteractiveImage value={value} />,
     },
   };
 
@@ -107,20 +112,13 @@ export default async function ArticlePage({ params }) {
           <h3 className="text-2xl font-bold mb-5">Gallery</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {post.gallery.map((image) => (
-              <div key={image._id} className="group flex flex-col gap-2">
-                <div className="aspect-square rounded-lg overflow-hidden bg-gray-100 border border-gray-100 shadow-sm relative">
-                  <img
-                    src={image.url}
-                    alt={image.altText || image.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 cursor-zoom-in"
-                  />
-                </div>
-                {image.caption && (
-                  <p className="text-xs text-gray-500 italic px-1">
-                    {image.caption}
-                  </p>
-                )}
-              </div>
+              <ClickableImage
+                key={image._id}
+                src={image.url}
+                alt={image.altText || image.title}
+                caption={image.caption}
+                aspectRatio="aspect-square"
+              />
             ))}
           </div>
         </section>
